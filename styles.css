@@ -1,3 +1,4 @@
+/* Apply general page styling */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -9,6 +10,7 @@ body {
     margin: 0;
 }
 
+/* Container for the content */
 .container {
     background: white;
     padding: 30px;
@@ -18,11 +20,13 @@ body {
     max-width: 500px;
 }
 
+/* Style the title */
 h1 {
     font-size: 24px;
     color: #333;
 }
 
+/* Stylish button */
 button {
     background: #ff6b6b;
     color: white;
@@ -36,11 +40,13 @@ button {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover effect on button */
 button:hover {
     background: #ff4040;
     transform: scale(1.05);
 }
 
+/* Dish text styling */
 #dish {
     font-size: 20px;
     margin-top: 20px;
@@ -51,16 +57,7 @@ button:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
+/* Fade-in effect for dish text */
 .show {
     opacity: 1;
-}
-
-/* Food image styling */
-#foodImage {
-    width: 100%;
-    max-width: 350px;
-    margin-top: 20px;
-    border-radius: 10px;
-    display: block;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }

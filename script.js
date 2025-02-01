@@ -13,13 +13,7 @@ const data = {
 
 // Function to generate a random dish
 function generateDish() {
-    let preposition = randomWord('preposition');
-    // Change "with" to "and" if the preposition ends with "with"
-    if (preposition.endsWith("with")) {
-        preposition = preposition.replace("with", "and");
-    }
-
-    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${preposition} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}`;
+    const dishText = ${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} and ${randomWord('ingredient')} ${randomWord('sauce')};
 const randomPrice = `$${Math.floor(Math.random() * (500 - 50) + 50)}`; // Generates a random price between $50 and $500 without decimals
 
     let dishElement = document.getElementById("dish");

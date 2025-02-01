@@ -13,8 +13,14 @@ const data = {
 
 // Function to generate a random dish
 function generateDish() {
-    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}`;
-    const randomPrice = `$${(Math.random() * (500 - 50) + 50).toFixed(2)}`; // Generates a random price between $50 and $500
+    let preposition = randomWord('preposition');
+    // Change "with" to "and" if the preposition ends with "with"
+    if (preposition.endsWith("with")) {
+        preposition = preposition.replace("with", "and");
+    }
+
+    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${preposition} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}`;
+    const randomPrice = `$${(Math.random() * (500 - 50) + 50).toFixed(2)}`;
 
     let dishElement = document.getElementById("dish");
 
@@ -22,7 +28,7 @@ function generateDish() {
     dishElement.classList.remove("show");
 
     // Play sound effect
-    let audio = new Audio('ding.mp3'); // Make sure the sound file is in the same folder or update path
+    let audio = new Audio('ding.mp3');
     audio.play();
 
     setTimeout(() => {
@@ -30,6 +36,7 @@ function generateDish() {
         dishElement.classList.add("show");
     }, 200);  // Slight delay before showing new text
 }
+
 
 
 // Helper function to pick a random word from a category

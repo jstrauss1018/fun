@@ -13,8 +13,8 @@ const data = {
 
 // Function to generate a random dish
 function generateDish() {
-    const dishText = ${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} and ${randomWord('ingredient')} ${randomWord('sauce')};
-const randomPrice = `$${Math.floor(Math.random() * (500 - 50) + 50)}`; // Generates a random price between $50 and $500 without decimals
+    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} and ${randomWord('ingredient')} ${randomWord('sauce')}`;
+    const randomPrice = `$${(Math.random() * (500 - 50) + 50).toFixed(2)}`; // Generates a random price between $50 and $500
 
     let dishElement = document.getElementById("dish");
 
@@ -22,7 +22,7 @@ const randomPrice = `$${Math.floor(Math.random() * (500 - 50) + 50)}`; // Genera
     dishElement.classList.remove("show");
 
     // Play sound effect
-    let audio = new Audio('ding.mp3');
+    let audio = new Audio('ding.mp3'); // Make sure the sound file is in the same folder or update path
     audio.play();
 
     setTimeout(() => {
@@ -32,9 +32,9 @@ const randomPrice = `$${Math.floor(Math.random() * (500 - 50) + 50)}`; // Genera
 }
 
 
-
 // Helper function to pick a random word from a category
 function randomWord(category) {
     let words = data[category].filter(word => word !== ""); // Remove empty values
     return words.length > 0 ? words[Math.floor(Math.random() * words.length)] : "";
 }
+

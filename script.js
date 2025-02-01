@@ -17,10 +17,14 @@ function generateDish() {
     const randomPrice = `$${(Math.random() * (500 - 50) + 50).toFixed(2)}`; // Generates a random price between $50 and $500
 
     let dishElement = document.getElementById("dish");
-    
+
     // Hide the text momentarily for effect
     dishElement.classList.remove("show");
-    
+
+    // Play sound effect
+    let audio = new Audio('ding.mp3'); // Make sure the sound file is in the same folder or update path
+    audio.play();
+
     setTimeout(() => {
         dishElement.textContent = `${dishText} - ${randomPrice}`;
         dishElement.classList.add("show");

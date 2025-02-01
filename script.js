@@ -13,7 +13,7 @@ const data = {
 
 // Function to generate a random dish
 function generateDish() {
-    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}.`;
+    const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}`;
 
     let dishElement = document.getElementById("dish");
     

@@ -11,38 +11,19 @@ const data = {
     sauce: ["Anglaise", "Au poivre", "Au jus", "Cream", "Vinaigrette"]
 };
 
-// List of random food images
-const foodImages = [
-    "https://source.unsplash.com/400x300/?food",
-    "https://source.unsplash.com/400x300/?gourmet",
-    "https://source.unsplash.com/400x300/?dish",
-    "https://source.unsplash.com/400x300/?meal",
-    "https://source.unsplash.com/400x300/?restaurant"
-];
-
 // Function to generate a random dish
 function generateDish() {
     const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${randomWord('preposition')} ${randomWord('sideDish')} with ${randomWord('fruitVeg')}, ${randomWord('ingredient')}, and ${randomWord('sauce')}.`;
 
     let dishElement = document.getElementById("dish");
-    let foodImage = document.getElementById("foodImage");
-    let soundEffect = document.getElementById("soundEffect");
-
+    
     // Hide the text momentarily for effect
     dishElement.classList.remove("show");
-
+    
     setTimeout(() => {
         dishElement.textContent = dishText;
         dishElement.classList.add("show");
-
-        // Play sound effect
-        soundEffect.play();
-
-        // Display a random food image
-        let randomImage = foodImages[Math.floor(Math.random() * foodImages.length)];
-        foodImage.src = randomImage;
-        foodImage.style.display = "block";
-    }, 200);
+    }, 200);  // Slight delay before showing new text
 }
 
 // Helper function to pick a random word from a category

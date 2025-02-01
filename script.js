@@ -20,7 +20,7 @@ function generateDish() {
     }
 
     const dishText = `${randomWord('nationality')} ${randomWord('adjective')} ${randomWord('meat')} ${randomWord('bodyPart')} ${preposition} ${randomWord('sideDish')} ${randomWord('fruitVeg')} with ${randomWord('ingredient')} ${randomWord('sauce')}`;
-    const randomPrice = `$${(Math.random() * (500 - 50) + 50).toFixed(2)}`;
+const randomPrice = `$${Math.floor(Math.random() * (500 - 50) + 50)}`; // Generates a random price between $50 and $500 without decimals
 
     let dishElement = document.getElementById("dish");
 
